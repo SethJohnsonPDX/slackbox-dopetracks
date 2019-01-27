@@ -78,6 +78,7 @@ app.post('/store', function(req, res) {
       spotifyApi.searchTracks(query)
         .then(function(data) {
           var results = data.body.tracks.items;
+          print results;
           if (results.length === 0) {
             return slack(res, 'Could not find that track.');
           }
